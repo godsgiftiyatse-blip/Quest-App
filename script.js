@@ -1,440 +1,222 @@
-/* ==========================
-   GLOBAL
-========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,
-body{
-    width:100%;
-    min-height:100vh;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    overflow-x:hidden;
-    background:#07141b;
-}
-
-/* ==========================
-   WELCOME PAGE
-========================== */
-
-.welcome-background{
-    position:fixed;
-    inset:0;
-
-    background:
-    url("hero.jpg")
-    center center
-    / cover
-    no-repeat;
-
-    z-index:-2;
-}
-
-.welcome-overlay{
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-
-    padding:20px 24px;
-
-    background:
-    linear-gradient(
-        to bottom,
-        rgba(0,0,0,.18),
-        rgba(0,0,0,.05),
-        rgba(0,0,0,.78)
-    );
-}
-
-.welcome-top{
-    text-align:center;
-    padding-top:10px;
-}
-
-/* LOGO */
-
-.logo-wrapper{
-    width:min(260px,65vw);
-    height:min(190px,26vh);
-
-    margin:auto;
-
-    overflow:hidden;
-}
-
-.welcome-logo{
-    width:100%;
-
-    transform:
-        translateY(-65px)
-        scale(1.55);
-
-    display:block;
-}
-
-/* TITLE */
-
-.welcome-title{
-    color:white;
-
-    font-size:clamp(3rem,9vw,5rem);
-
-    font-weight:800;
-
-    letter-spacing:10px;
-
-    margin-top:-25px;
-}
-
-/* DIVIDER */
-
-.welcome-divider{
-    width:55px;
-    height:4px;
-
-    background:#66ffab;
-
-    border-radius:999px;
-
-    margin:18px auto;
-}
-
-/* TEXT */
-
-.welcome-subtitle{
-    color:white;
-
-    font-size:clamp(1rem,4vw,1.5rem);
-
-    font-weight:300;
-}
-
-.welcome-heading{
-    margin-top:10px;
-
-    color:#66ffab;
-
-    font-size:clamp(1.5rem,5vw,2.2rem);
-
-    font-weight:700;
-}
-
-.welcome-space{
-    flex:1;
-}
-
-/* BUTTONS */
-
-.welcome-buttons{
-    width:100%;
-    padding-bottom:20px;
-}
-
-.primary-btn{
-    width:100%;
-    min-height:68px;
-
-    border:none;
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #7effbc,
-        #43d989
-    );
-
-    color:#04151d;
-
-    font-size:1.1rem;
-    font-weight:700;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 10px 30px rgba(126,255,188,.25);
-}
-
-.primary-btn span{
-    margin-right:10px;
-}
-
-.secondary-btn{
-    width:100%;
-    min-height:68px;
-
-    margin-top:15px;
-
-    border-radius:22px;
-
-    border:1px solid rgba(126,255,188,.4);
-
-    background:transparent;
-
-    color:white;
-
-    font-size:1rem;
-
-    cursor:pointer;
-}
-
-/* ==========================
-   LOGIN / SIGNUP
-========================== */
-
-.auth-background{
-    position:fixed;
-    inset:0;
-
-    background:
-    linear-gradient(
-        180deg,
-        #07141b,
-        #0b1e27,
-        #061017
-    );
-
-    z-index:-2;
-}
-
-.auth-overlay{
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:25px;
-}
-
-.auth-container{
-    width:100%;
-    max-width:450px;
-
-    padding:30px;
-
-    border-radius:28px;
-
-    background:
-    rgba(255,255,255,.05);
-
-    backdrop-filter:blur(12px);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-}
-
-/* BACK BUTTON */
-
-.back-btn{
-    width:45px;
-    height:45px;
-
-    border:none;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    font-size:1.3rem;
-
-    background:
-    rgba(255,255,255,.08);
-
-    color:white;
-
-    margin-bottom:20px;
-}
-
-/* LOGO */
-
-.auth-logo{
-    width:120px;
-
-    display:block;
-    margin:auto;
-}
-
-/* TITLES */
-
-.auth-title{
-    color:white;
-
-    text-align:center;
-
-    margin-top:10px;
-
-    font-size:2rem;
-}
-
-.auth-subtitle{
-    color:#c9d5dc;
-
-    text-align:center;
-
-    margin-top:8px;
-    margin-bottom:25px;
-}
-
-/* FORM */
-
-.auth-form{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
-
-.input-group{
-    display:flex;
-    flex-direction:column;
-}
-
-.input-group label{
-    color:white;
-    margin-bottom:8px;
-    font-size:.95rem;
-}
-
-.input-group input{
-    width:100%;
-
-    height:56px;
-
-    border:none;
-
-    border-radius:16px;
-
-    padding:0 16px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    color:white;
-
-    outline:none;
-}
-
-.input-group input::placeholder{
-    color:#b8c5cc;
-}
-
-/* PASSWORD */
-
-.password-wrapper{
-    position:relative;
-}
-
-.toggle-password{
-    position:absolute;
-
-    right:12px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    border:none;
-
-    background:none;
-
-    color:#66ffab;
-
-    cursor:pointer;
-
-    font-weight:600;
-}
-
-/* AUTH BUTTON */
-
-.auth-primary-btn{
-    width:100%;
-
-    height:60px;
-
-    border:none;
-
-    border-radius:18px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #7effbc,
-        #43d989
-    );
-
-    color:#04151d;
-
-    font-size:1rem;
-    font-weight:700;
-
-    cursor:pointer;
-}
-
-/* FOOTER */
-
-.auth-footer{
-    margin-top:20px;
-
-    text-align:center;
-
-    color:white;
-}
-
-.auth-footer a{
-    color:#66ffab;
-    text-decoration:none;
-    font-weight:700;
-}
-
-/* ==========================
-   RESPONSIVE
-========================== */
-
-@media(max-width:480px){
-
-    .welcome-title{
-        font-size:3rem;
+/***********************
+ * QUEST APP - SCRIPT.JS
+ * Full System: Auth + Dashboard + XP + Quests
+ ***********************/
+
+/* -----------------------
+   LOCAL STORAGE KEYS
+------------------------*/
+const USERS_KEY = "quest_users";
+const CURRENT_USER_KEY = "quest_current_user";
+
+/* -----------------------
+   AUTH SYSTEM
+------------------------*/
+
+// Signup
+function signup(username, password) {
+    let users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+
+    const exists = users.find(u => u.username === username);
+    if (exists) {
+        alert("User already exists!");
+        return false;
     }
 
-    .welcome-heading{
-        font-size:1.6rem;
-    }
+    const newUser = {
+        username,
+        password,
+        level: 1,
+        xp: 0,
+        quests: []
+    };
 
-    .auth-container{
-        padding:24px;
-    }
+    users.push(newUser);
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
 
-    .auth-title{
-        font-size:1.7rem;
-    }
+    alert("Signup successful! You can now log in.");
+    return true;
 }
 
-@media(max-height:700px){
+// Login
+function login(username, password) {
+    let users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
 
-    .logo-wrapper{
-        width:200px;
-        height:140px;
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (!user) {
+        alert("Invalid username or password");
+        return false;
     }
 
-    .welcome-logo{
-        transform:
-        translateY(-50px)
-        scale(1.45);
+    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+    window.location.href = "dashboard.html";
+    return true;
+}
+
+/* -----------------------
+   DASHBOARD LOADING
+------------------------*/
+
+function loadDashboard() {
+    let user = JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+
+    if (!user) {
+        window.location.href = "index.html";
+        return;
     }
 
-    .welcome-title{
-        font-size:3rem;
+    document.getElementById("userName").innerText = user.username;
+    document.getElementById("userLevel").innerText = user.level;
+
+    updateXPUI(user);
+    renderQuests(user);
+}
+
+/* -----------------------
+   XP SYSTEM
+------------------------*/
+
+function addXP(user, xpGain) {
+    user.xp += xpGain;
+
+    let xpNeeded = user.level * 100;
+
+    while (user.xp >= xpNeeded) {
+        user.xp -= xpNeeded;
+        user.level += 1;
+        xpNeeded = user.level * 100;
+
+        alert("Level Up! You are now level " + user.level);
     }
 
-    .welcome-space{
-        min-height:40px;
+    saveCurrentUser(user);
+    updateXPUI(user);
+}
+
+/* -----------------------
+   UI UPDATES
+------------------------*/
+
+function updateXPUI(user) {
+    let xpNeeded = user.level * 100;
+
+    document.getElementById("xpText").innerText =
+        `${user.xp} / ${xpNeeded} XP`;
+
+    let percent = (user.xp / xpNeeded) * 100;
+    document.getElementById("xpFill").style.width = percent + "%";
+
+    document.getElementById("userLevel").innerText = user.level;
+}
+
+/* -----------------------
+   QUEST SYSTEM
+------------------------*/
+
+function createQuest() {
+    let title = document.getElementById("questTitle").value;
+    let difficulty = parseInt(document.getElementById("questDifficulty").value);
+
+    if (!title) {
+        alert("Please enter a quest title");
+        return;
     }
+
+    let user = getCurrentUser();
+
+    const quest = {
+        id: Date.now(),
+        title,
+        xp: difficulty,
+        completed: false
+    };
+
+    user.quests.push(quest);
+
+    saveCurrentUser(user);
+    renderQuests(user);
+
+    document.getElementById("questTitle").value = "";
+}
+
+/* -----------------------
+   COMPLETE QUEST
+------------------------*/
+
+function completeQuest(id) {
+    let user = getCurrentUser();
+
+    let quest = user.quests.find(q => q.id === id);
+
+    if (!quest || quest.completed) return;
+
+    quest.completed = true;
+
+    addXP(user, quest.xp);
+
+    saveCurrentUser(user);
+    renderQuests(user);
+}
+
+/* -----------------------
+   RENDER QUESTS
+------------------------*/
+
+function renderQuests(user) {
+    let list = document.getElementById("questList");
+    list.innerHTML = "";
+
+    user.quests.forEach(q => {
+        let div = document.createElement("div");
+        div.className = "quest-item";
+
+        div.innerHTML = `
+            <div>
+                <strong>${q.title}</strong>
+                <p>+${q.xp} XP</p>
+            </div>
+
+            <button onclick="completeQuest(${q.id})"
+                ${q.completed ? "disabled" : ""}>
+                ${q.completed ? "Done" : "Complete"}
+            </button>
+        `;
+
+        if (q.completed) {
+            div.style.opacity = "0.6";
         }
+
+        list.appendChild(div);
+    });
+}
+
+/* -----------------------
+   STORAGE HELPERS
+------------------------*/
+
+function getCurrentUser() {
+    return JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+}
+
+function saveCurrentUser(updatedUser) {
+    let users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+
+    let index = users.findIndex(u => u.username === updatedUser.username);
+
+    if (index !== -1) {
+        users[index] = updatedUser;
+    }
+
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(updatedUser));
+}
+
+/* -----------------------
+   LOGOUT
+------------------------*/
+
+function logout() {
+    localStorage.removeItem(CURRENT_USER_KEY);
+    window.location.href = "index.html";
+}
