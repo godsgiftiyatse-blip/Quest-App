@@ -1,32 +1,214 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-input {
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    font-size: 14px;
+html,
+body{
+    width:100%;
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
 }
 
-input:focus {
-    outline: 2px solid #2563eb;
+body{
+    position:relative;
 }
 
-.small {
-    font-size: 32px;
+/* BACKGROUND */
+.background{
+    position:fixed;
+    inset:0;
+
+    background:
+    url("hero.jpg")
+    center center
+    / cover
+    no-repeat;
+
+    z-index:-1;
 }
 
-.switch {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #cbd5e1;
+/* OVERLAY */
+.overlay{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:20px 24px 24px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.78)
+    );
 }
 
-.switch a {
-    color: #f59e0b;
-    text-decoration: none;
+/* TOP SECTION */
+.top-section{
+    text-align:center;
+    padding-top:10px;
 }
+
+/* LOGO CONTAINER */
+.logo-container{
+    width:min(260px,65vw);
+    height:min(190px,26vh);
+
+    margin:auto;
+
+    overflow:hidden;
+}
+
+/* CROPPED LOGO */
+.logo{
+    width:100%;
+
+    transform:
+        translateY(-65px)
+        scale(1.55);
+
+    display:block;
+}
+
+/* APP NAME */
+.brand{
+    color:white;
+
+    font-size:clamp(3rem,9vw,5rem);
+
+    font-weight:800;
+
+    letter-spacing:10px;
+
+    margin-top:-25px;
+}
+
+/* DIVIDER */
+.divider{
+    width:55px;
+    height:4px;
+
+    background:#66ffab;
+
+    border-radius:999px;
+
+    margin:18px auto;
+}
+
+/* TEXT */
+.subtitle{
+    color:white;
+
+    font-size:clamp(1rem,4vw,1.5rem);
+
+    font-weight:300;
+}
+
+.headline{
+    margin-top:10px;
+
+    color:#66ffab;
+
+    font-size:clamp(1.5rem,5vw,2.2rem);
+
+    font-weight:700;
+}
+
+/* CREATES EMPTY SCENIC AREA */
+.middle-space{
+    flex:1;
+    min-height:120px;
+}
+
+/* BUTTON AREA */
+.bottom-section{
+    width:100%;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary{
+    width:100%;
+    min-height:68px;
+
+    border:none;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7effbc,
+        #43d989
+    );
+
+    color:#04151d;
+
+    font-size:clamp(1rem,4vw,1.4rem);
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 30px rgba(126,255,188,.25);
+}
+
+.btn-primary span{
+    margin-right:10px;
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary{
+    width:100%;
+    min-height:68px;
+
+    margin-top:15px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(126,255,188,.4);
+
+    background:transparent;
+
+    color:white;
+
+    font-size:clamp(.95rem,3vw,1.1rem);
+
+    cursor:pointer;
+}
+
+/* SHORT DEVICES */
+@media (max-height:750px){
+
+    .logo-container{
+        width:200px;
+        height:140px;
+    }
+
+    .logo{
+        transform:
+            translateY(-50px)
+            scale(1.45);
+    }
+
+    .brand{
+        font-size:3rem;
+    }
+
+    .headline{
+        font-size:1.5rem;
+    }
+
+    .middle-space{
+        min-height:50px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        min-height:58px;
+    }
+    }
