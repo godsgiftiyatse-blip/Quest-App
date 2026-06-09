@@ -3,51 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QUEST</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Quest</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
-</head>
 
+</head>
 <body>
 
-<div class="background"></div>
+<div class="welcome-background"></div>
 
-<div class="overlay">
+<div class="welcome-overlay">
 
-    <div class="top-section">
+    <div class="welcome-top">
 
-        <div class="logo-container">
-            <img src="logo.png" alt="Quest Logo" class="logo">
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="Quest Logo" class="welcome-logo">
         </div>
 
-        <h1 class="brand">QUEST</h1>
+        <h1 class="welcome-title">
+            QUEST
+        </h1>
 
-        <div class="divider"></div>
+        <div class="welcome-divider"></div>
 
-        <p class="subtitle">
+        <p class="welcome-subtitle">
             Turn goals into quests.
         </p>
 
-        <h2 class="headline">
+        <h2 class="welcome-heading">
             Level up your life.
         </h2>
 
     </div>
 
-    <div class="middle-space"></div>
+    <div class="welcome-space"></div>
 
-    <div class="bottom-section">
+    <div class="welcome-buttons">
 
-        <button class="btn-primary">
+        <button
+            class="primary-btn"
+            onclick="window.location.href='signup.html'">
+
             <span>→</span>
             Get Started
+
         </button>
 
-        <button class="btn-secondary">
+        <button
+            class="secondary-btn"
+            onclick="window.location.href='login.html'">
+
             I Already Have an Account
+
         </button>
 
     </div>
