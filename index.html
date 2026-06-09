@@ -1,69 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Quest</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quest - Welcome</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="welcome-background"></div>
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Loading Quest...</p>
+  </div>
 
-<div class="welcome-overlay">
-
-    <div class="welcome-top">
-
-        <div class="logo-wrapper">
-            <img src="logo.png" alt="Quest Logo" class="welcome-logo">
-        </div>
-
-        <h1 class="welcome-title">
-            QUEST
-        </h1>
-
-        <div class="welcome-divider"></div>
-
-        <p class="welcome-subtitle">
-            Turn goals into quests.
-        </p>
-
-        <h2 class="welcome-heading">
-            Level up your life.
-        </h2>
-
+  <div class="container hidden" id="app">
+    <div class="hero">
+      <img src="hero.jpg" alt="Hero Image" class="hero-img"/>
+      <img src="logo.png" alt="Logo" class="logo"/>
     </div>
 
-    <div class="welcome-space"></div>
+    <h1>Welcome to Quest</h1>
+    <p class="subtitle">Learn. Grow. Succeed.</p>
 
-    <div class="welcome-buttons">
-
-        <button
-            class="primary-btn"
-            onclick="window.location.href='signup.html'">
-
-            <span>→</span>
-            Get Started
-
-        </button>
-
-        <button
-            class="secondary-btn"
-            onclick="window.location.href='login.html'">
-
-            I Already Have an Account
-
-        </button>
-
+    <div class="buttons">
+      <a href="login.html" class="btn primary">Login</a>
+      <a href="signup.html" class="btn secondary">Create Account</a>
     </div>
+  </div>
 
-</div>
-
-<script src="script.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("app").classList.remove("hidden");
+      }, 1500);
+    });
+  </script>
 
 </body>
 </html>
