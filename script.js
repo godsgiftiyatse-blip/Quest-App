@@ -219,4 +219,4 @@ function saveCurrentUser(updatedUser) {
 function logout() {
     localStorage.removeItem(CURRENT_USER_KEY);
     window.location.href = "index.html";
-}
+        }
