@@ -1,214 +1,258 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,
-body{
-    width:100%;
-    min-height:100vh;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    position:relative;
+min-height:100vh;
+overflow-x:hidden;
+color:white;
+background:#000;
 }
 
-/* BACKGROUND */
+/* =======================
+LANDING PAGE
+======================= */
+
 .background{
-    position:fixed;
-    inset:0;
-
-    background:
-    url("hero.jpg")
-    center center
-    / cover
-    no-repeat;
-
-    z-index:-1;
+position:fixed;
+inset:0;
+background:url("hero.jpg") center center/cover no-repeat;
+z-index:-2;
 }
 
-/* OVERLAY */
+.background::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.65);
+}
+
 .overlay{
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-
-    padding:20px 24px 24px;
-
-    background:
-    linear-gradient(
-        to bottom,
-        rgba(0,0,0,.18),
-        rgba(0,0,0,.05),
-        rgba(0,0,0,.78)
-    );
+min-height:100vh;
+display:flex;
+flex-direction:column;
+padding:30px;
 }
 
-/* TOP SECTION */
 .top-section{
-    text-align:center;
-    padding-top:10px;
+text-align:center;
+margin-top:40px;
 }
 
-/* LOGO CONTAINER */
 .logo-container{
-    width:min(260px,65vw);
-    height:min(190px,26vh);
-
-    margin:auto;
-
-    overflow:hidden;
+margin-bottom:15px;
 }
 
-/* CROPPED LOGO */
 .logo{
-    width:100%;
-
-    transform:
-        translateY(-65px)
-        scale(1.55);
-
-    display:block;
+width:90px;
 }
 
-/* APP NAME */
 .brand{
-    color:white;
-
-    font-size:clamp(3rem,9vw,5rem);
-
-    font-weight:800;
-
-    letter-spacing:10px;
-
-    margin-top:-25px;
+font-size:3rem;
+font-weight:800;
+letter-spacing:3px;
 }
 
-/* DIVIDER */
 .divider{
-    width:55px;
-    height:4px;
-
-    background:#66ffab;
-
-    border-radius:999px;
-
-    margin:18px auto;
+width:80px;
+height:4px;
+background:#00ff88;
+margin:15px auto;
+border-radius:50px;
 }
 
-/* TEXT */
 .subtitle{
-    color:white;
-
-    font-size:clamp(1rem,4vw,1.5rem);
-
-    font-weight:300;
+opacity:0.85;
+margin-bottom:10px;
 }
 
 .headline{
-    margin-top:10px;
-
-    color:#66ffab;
-
-    font-size:clamp(1.5rem,5vw,2.2rem);
-
-    font-weight:700;
+font-size:2rem;
+font-weight:700;
 }
 
-/* CREATES EMPTY SCENIC AREA */
 .middle-space{
-    flex:1;
-    min-height:120px;
+flex:1;
 }
 
-/* BUTTON AREA */
 .bottom-section{
-    width:100%;
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-bottom:40px;
 }
 
-/* PRIMARY BUTTON */
-.btn-primary{
-    width:100%;
-    min-height:68px;
+/* =======================
+BUTTONS
+======================= */
 
-    border:none;
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #7effbc,
-        #43d989
-    );
-
-    color:#04151d;
-
-    font-size:clamp(1rem,4vw,1.4rem);
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 10px 30px rgba(126,255,188,.25);
+.btn-primary,
+.auth-primary-btn{
+background:#00ff88;
+color:#000;
+border:none;
+border-radius:12px;
+padding:14px;
+font-weight:700;
+font-size:1rem;
+cursor:pointer;
+text-decoration:none;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
 }
 
-.btn-primary span{
-    margin-right:10px;
-}
-
-/* SECONDARY BUTTON */
 .btn-secondary{
-    width:100%;
-    min-height:68px;
-
-    margin-top:15px;
-
-    border-radius:22px;
-
-    border:1px solid rgba(126,255,188,.4);
-
-    background:transparent;
-
-    color:white;
-
-    font-size:clamp(.95rem,3vw,1.1rem);
-
-    cursor:pointer;
+background:transparent;
+border:2px solid white;
+color:white;
+border-radius:12px;
+padding:14px;
+font-weight:600;
+cursor:pointer;
+text-decoration:none;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-/* SHORT DEVICES */
-@media (max-height:750px){
+/* =======================
+AUTH PAGES
+======================= */
 
-    .logo-container{
-        width:200px;
-        height:140px;
-    }
+.auth-background{
+position:fixed;
+inset:0;
+background:url("hero.jpg") center center/cover no-repeat;
+z-index:-2;
+}
 
-    .logo{
-        transform:
-            translateY(-50px)
-            scale(1.45);
-    }
+.auth-background::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.75);
+}
 
-    .brand{
-        font-size:3rem;
-    }
+.auth-overlay{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
 
-    .headline{
-        font-size:1.5rem;
-    }
+.auth-container{
+width:100%;
+max-width:420px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:30px;
+position:relative;
+}
 
-    .middle-space{
-        min-height:50px;
-    }
+.auth-logo{
+width:70px;
+display:block;
+margin:0 auto 15px;
+}
 
-    .btn-primary,
-    .btn-secondary{
-        min-height:58px;
-    }
+.auth-title{
+text-align:center;
+margin-bottom:8px;
+}
+
+.auth-subtitle{
+text-align:center;
+opacity:0.8;
+margin-bottom:25px;
+}
+
+.auth-form{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.input-group{
+display:flex;
+flex-direction:column;
+}
+
+.input-group label{
+margin-bottom:6px;
+font-size:0.9rem;
+}
+
+.input-group input{
+padding:14px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+
+.password-wrapper{
+display:flex;
+gap:8px;
+}
+
+.password-wrapper input{
+flex:1;
+}
+
+.toggle-password{
+border:none;
+border-radius:10px;
+padding:0 14px;
+cursor:pointer;
+background:#00ff88;
+color:#000;
+font-weight:600;
+}
+
+.auth-footer{
+margin-top:20px;
+text-align:center;
+}
+
+.auth-footer a{
+color:#00ff88;
+text-decoration:none;
+font-weight:600;
+}
+
+.back-btn{
+position:absolute;
+top:15px;
+left:15px;
+background:none;
+border:none;
+color:white;
+font-size:24px;
+cursor:pointer;
+}
+
+/* =======================
+MOBILE
+======================= */
+
+@media(max-width:480px){
+
+.brand{
+    font-size:2.3rem;
+}
+
+.headline{
+    font-size:1.5rem;
+}
+
+.auth-container{
+    padding:25px;
+}
+
 }
