@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quest - Welcome</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Quest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="loader" id="loader">
-    <div class="spinner"></div>
-    <p>Loading Quest...</p>
-  </div>
+<div class="auth-background"></div>
 
-  <div class="container hidden" id="app">
-    <div class="hero">
-      <img src="hero.jpg" alt="Hero Image" class="hero-img"/>
-      <img src="logo.png" alt="Logo" class="logo"/>
+<div class="auth-overlay">
+
+    <div class="auth-container">
+
+        <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+
+        <img src="logo.png" class="auth-logo">
+
+        <h1 class="auth-title">Welcome Back</h1>
+
+        <p class="auth-subtitle">Login to continue your journey.</p>
+
+        <form id="loginForm" class="auth-form">
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+                    <button type="button" class="toggle-password"
+                        onclick="togglePassword('loginPassword', this)">
+                        Show
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" class="auth-primary-btn">
+                Login
+            </button>
+
+        </form>
+
+        <p class="auth-footer">
+            Don't have an account?
+            <a href="signup.html">Sign Up</a>
+        </p>
+
+        <p id="loginMsg"></p>
+
     </div>
 
-    <h1>Welcome to Quest</h1>
-    <p class="subtitle">Learn. Grow. Succeed.</p>
+</div>
 
-    <div class="buttons">
-      <a href="login.html" class="btn primary">Login</a>
-      <a href="signup.html" class="btn secondary">Create Account</a>
-    </div>
-  </div>
-
-  <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("app").classList.remove("hidden");
-      }, 1500);
-    });
-  </script>
+<script src="script.js"></script>
 
 </body>
 </html>
