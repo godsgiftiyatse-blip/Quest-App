@@ -96,11 +96,12 @@ BUTTONS
 
 .btn-primary,
 .auth-primary-btn{
+width:100%;
 background:#00ff88;
 color:#000;
 border:none;
 border-radius:12px;
-padding:14px;
+padding:15px;
 font-weight:700;
 font-size:1rem;
 cursor:pointer;
@@ -159,6 +160,7 @@ backdrop-filter:blur(12px);
 border-radius:20px;
 padding:30px;
 position:relative;
+overflow:hidden;
 }
 
 .auth-logo{
@@ -169,6 +171,7 @@ margin:0 auto 15px;
 
 .auth-title{
 text-align:center;
+font-size:3rem;
 margin-bottom:8px;
 }
 
@@ -185,35 +188,45 @@ gap:16px;
 }
 
 .input-group{
+width:100%;
 display:flex;
 flex-direction:column;
 }
 
 .input-group label{
 margin-bottom:6px;
-font-size:0.9rem;
+font-size:0.95rem;
 }
 
 .input-group input{
+width:100%;
 padding:14px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 outline:none;
+font-size:1rem;
 }
 
+/* Password */
+
 .password-wrapper{
-display:flex;
-gap:8px;
+position:relative;
+width:100%;
 }
 
 .password-wrapper input{
-flex:1;
+width:100%;
+padding-right:85px;
 }
 
 .toggle-password{
+position:absolute;
+right:8px;
+top:50%;
+transform:translateY(-50%);
 border:none;
 border-radius:10px;
-padding:0 14px;
+padding:8px 12px;
 cursor:pointer;
 background:#00ff88;
 color:#000;
@@ -223,6 +236,7 @@ font-weight:600;
 .auth-footer{
 margin-top:20px;
 text-align:center;
+font-size:1rem;
 }
 
 .auth-footer a{
@@ -246,134 +260,60 @@ cursor:pointer;
 MOBILE
 ======================= */
 
-@media(max-width:480px){
-
-.logo{
-width:160px;
-}
-
-.brand{
-font-size:4rem;
-letter-spacing:8px;
-}
-
-.headline{
-font-size:2.4rem;
-}
+@media(max-width:768px){
 
 .auth-container{
+width:95%;
 padding:25px;
 }
 
-}}
-
-.auth-container{
-width:100%;
-max-width:420px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-border-radius:20px;
-padding:30px;
-position:relative;
-}
-
-.auth-logo{
-width:70px;
-display:block;
-margin:0 auto 15px;
-}
-
 .auth-title{
-text-align:center;
-margin-bottom:8px;
+font-size:2.7rem;
 }
-
-.auth-subtitle{
-text-align:center;
-opacity:0.8;
-margin-bottom:25px;
-}
-
-.auth-form{
-display:flex;
-flex-direction:column;
-gap:16px;
-}
-
-.input-group{
-display:flex;
-flex-direction:column;
-}
-
-.input-group label{
-margin-bottom:6px;
-font-size:0.9rem;
-}
-
-.input-group input{
-padding:14px;
-border:none;
-border-radius:10px;
-outline:none;
-}
-
-.password-wrapper{
-display:flex;
-gap:8px;
-}
-
-.password-wrapper input{
-flex:1;
-}
-
-.toggle-password{
-border:none;
-border-radius:10px;
-padding:0 14px;
-cursor:pointer;
-background:#00ff88;
-color:#000;
-font-weight:600;
-}
-
-.auth-footer{
-margin-top:20px;
-text-align:center;
-}
-
-.auth-footer a{
-color:#00ff88;
-text-decoration:none;
-font-weight:600;
-}
-
-.back-btn{
-position:absolute;
-top:15px;
-left:15px;
-background:none;
-border:none;
-color:white;
-font-size:24px;
-cursor:pointer;
-}
-
-/* =======================
-MOBILE
-======================= */
-
-@media(max-width:480px){
 
 .brand{
-    font-size:2.3rem;
+font-size:3rem;
+letter-spacing:5px;
 }
 
 .headline{
-    font-size:1.5rem;
+font-size:2rem;
 }
+
+}
+
+@media(max-width:480px){
 
 .auth-container{
-    padding:25px;
+width:100%;
+padding:20px;
+border-radius:16px;
 }
 
+.auth-title{
+font-size:2.3rem;
 }
+
+.auth-subtitle{
+font-size:0.95rem;
+}
+
+.brand{
+font-size:2.2rem;
+letter-spacing:3px;
+}
+
+.headline{
+font-size:1.5rem;
+}
+
+.logo{
+width:140px;
+}
+
+.toggle-password{
+padding:7px 10px;
+font-size:0.85rem;
+}
+
+    }
