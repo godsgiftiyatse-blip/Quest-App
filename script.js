@@ -1,63 +1,99 @@
-function togglePassword(id, btn) {
-  const input = document.getElementById(id);
+document.addEventListener("DOMContentLoaded", function () {
 
-  if (input.type === "password") {
-    input.type = "text";
-    btn.innerText = "Hide";
-  } else {
-    input.type = "password";
-    btn.innerText = "Show";
-  }
-}
+    // =========================
+    // TOGGLE PASSWORD VISIBILITY
+    // =========================
+    window.togglePassword = function (inputId, btn) {
+        const input = document.getElementById(inputId);
 
-/* SIGN UP */
-document.getElementById("signupForm")?.addEventListener("submit", function(e) {
-  e.preventDefault();
+        if (input.type === "password") {
+            input.type = "text";
+            btn.textContent = "Hide";
+        } else {
+            input.type = "password";
+            btn.textContent = "Show";
+        }
+    };
 
-  const user = document.getElementById("signupUser").value;
-  const email = document.getElementById("signupEmail").value;
-  const pass = document.getElementById("signupPassword").value;
+    // =========================
+    // SIGN UP SYSTEM
+    // =========================
+    const signupForm = document.getElementById("signupForm");
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+    if (signupForm) {
+        signupForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-  const exists = users.find(u => u.email === email);
+            const name = document.getElementById("signupName").value.trim();
+            const email = document.getElementById("signupEmail").value.trim();
+            const password = document.getElementById("signupPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
 
-  if (exists) {
-    document.getElementById("signupMsg").innerText = "Email already exists!";
-    return;
-  }
+            // Validation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
 
-  users.push({ user, email, pass });
-  localStorage.setItem("users", JSON.stringify(users));
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return;
+            }
 
-  document.getElementById("signupMsg").innerText = "Account created!";
+            // Check if user already exists
+            const existingUser = JSON.parse(localStorage.getItem("questUser"));
 
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 1000);
-});
+            if (existingUser && existingUser.email === email) {
+                alert("Account already exists with this email");
+                return;
+            }
 
-/* LOGIN */
-document.getElementById("loginForm")?.addEventListener("submit", function(e) {
-  e.preventDefault();
+            const user = {
+                name,
+                email,
+                password
+            };
 
-  const email = document.getElementById("loginEmail").value;
-  const pass = document.getElementById("loginPassword").value;
+            localStorage.setItem("questUser", JSON.stringify(user));
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+            alert("Account created successfully!");
 
-  const found = users.find(u => u.email === email && u.pass === pass);
+            window.location.href = "login.html";
+        });
+    }
 
-  if (!found) {
-    document.getElementById("loginMsg").innerText = "Invalid email or password!";
-    return;
-  }
+    // =========================
+    // LOGIN SYSTEM
+    // =========================
+    const loginForm = document.getElementById("loginForm");
 
-  localStorage.setItem("currentUser", JSON.stringify(found));
+    if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-  document.getElementById("loginMsg").innerText = "Login successful!";
+            const email = document.getElementById("loginEmail").value.trim();
+            const password = document.getElementById("loginPassword").value;
 
-  setTimeout(() => {
-    window.location.href = "dashboard.html";
-  }, 1000);
+            const storedUser = JSON.parse(localStorage.getItem("questUser"));
+
+            if (!storedUser) {
+                alert("No account found. Please sign up first.");
+                return;
+            }
+
+            if (email === storedUser.email && password === storedUser.password) {
+                alert("Login successful!");
+
+                localStorage.setItem("questLoggedIn", "true");
+
+                // store active user session
+                localStorage.setItem("questActiveUser", JSON.stringify(storedUser));
+
+                window.location.href = "dashboard.html";
+            } else {
+                alert("Incorrect email or password");
+            }
+        });
+    }
+
 });
