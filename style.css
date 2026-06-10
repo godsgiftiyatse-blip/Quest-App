@@ -39,39 +39,44 @@ padding:30px;
 
 .top-section{
 text-align:center;
-margin-top:40px;
+margin-top:80px;
 }
 
 .logo-container{
-margin-bottom:15px;
+margin-bottom:25px;
 }
 
 .logo{
-width:90px;
+width:180px;
+height:auto;
+display:block;
+margin:0 auto;
 }
 
 .brand{
-font-size:3rem;
+font-size:4.5rem;
 font-weight:800;
-letter-spacing:3px;
+letter-spacing:10px;
 }
 
 .divider{
-width:80px;
-height:4px;
+width:110px;
+height:6px;
 background:#00ff88;
-margin:15px auto;
+margin:20px auto;
 border-radius:50px;
 }
 
 .subtitle{
+font-size:1.3rem;
 opacity:0.85;
-margin-bottom:10px;
+margin-bottom:20px;
 }
 
 .headline{
-font-size:2rem;
+font-size:3rem;
 font-weight:700;
+color:#66ff99;
 }
 
 .middle-space{
@@ -145,6 +150,122 @@ justify-content:center;
 align-items:center;
 padding:20px;
 }
+
+.auth-container{
+width:100%;
+max-width:420px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:30px;
+position:relative;
+}
+
+.auth-logo{
+width:70px;
+display:block;
+margin:0 auto 15px;
+}
+
+.auth-title{
+text-align:center;
+margin-bottom:8px;
+}
+
+.auth-subtitle{
+text-align:center;
+opacity:0.8;
+margin-bottom:25px;
+}
+
+.auth-form{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.input-group{
+display:flex;
+flex-direction:column;
+}
+
+.input-group label{
+margin-bottom:6px;
+font-size:0.9rem;
+}
+
+.input-group input{
+padding:14px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+
+.password-wrapper{
+display:flex;
+gap:8px;
+}
+
+.password-wrapper input{
+flex:1;
+}
+
+.toggle-password{
+border:none;
+border-radius:10px;
+padding:0 14px;
+cursor:pointer;
+background:#00ff88;
+color:#000;
+font-weight:600;
+}
+
+.auth-footer{
+margin-top:20px;
+text-align:center;
+}
+
+.auth-footer a{
+color:#00ff88;
+text-decoration:none;
+font-weight:600;
+}
+
+.back-btn{
+position:absolute;
+top:15px;
+left:15px;
+background:none;
+border:none;
+color:white;
+font-size:24px;
+cursor:pointer;
+}
+
+/* =======================
+MOBILE
+======================= */
+
+@media(max-width:480px){
+
+.logo{
+width:160px;
+}
+
+.brand{
+font-size:4rem;
+letter-spacing:8px;
+}
+
+.headline{
+font-size:2.4rem;
+}
+
+.auth-container{
+padding:25px;
+}
+
+}}
 
 .auth-container{
 width:100%;
