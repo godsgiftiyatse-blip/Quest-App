@@ -1,140 +1,214 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  min-height: 100vh;
-  color: white;
+html,
+body{
+    width:100%;
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
 }
 
-/* Background */
-.auth-background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #0f172a, #020617);
-  z-index: -1;
+body{
+    position:relative;
 }
 
-.auth-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* BACKGROUND */
+.background{
+    position:fixed;
+    inset:0;
+
+    background:
+    url("hero.jpg")
+    center center
+    / cover
+    no-repeat;
+
+    z-index:-1;
 }
 
-/* Container */
-.auth-container {
-  width: 90%;
-  max-width: 380px;
-  text-align: center;
+/* OVERLAY */
+.overlay{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:20px 24px 24px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.78)
+    );
 }
 
-/* Logo */
-.auth-logo {
-  width: 80px;
-  margin-bottom: 15px;
+/* TOP SECTION */
+.top-section{
+    text-align:center;
+    padding-top:10px;
 }
 
-/* Titles */
-.auth-title {
-  font-size: 28px;
-  font-weight: 700;
+/* LOGO CONTAINER */
+.logo-container{
+    width:min(260px,65vw);
+    height:min(190px,26vh);
+
+    margin:auto;
+
+    overflow:hidden;
 }
 
-.auth-subtitle {
-  font-size: 14px;
-  color: #94a3b8;
-  margin-bottom: 20px;
+/* CROPPED LOGO */
+.logo{
+    width:100%;
+
+    transform:
+        translateY(-65px)
+        scale(1.55);
+
+    display:block;
 }
 
-/* Inputs */
-.auth-form {
-  text-align: left;
+/* APP NAME */
+.brand{
+    color:white;
+
+    font-size:clamp(3rem,9vw,5rem);
+
+    font-weight:800;
+
+    letter-spacing:10px;
+
+    margin-top:-25px;
 }
 
-.input-group {
-  margin-bottom: 15px;
+/* DIVIDER */
+.divider{
+    width:55px;
+    height:4px;
+
+    background:#66ffab;
+
+    border-radius:999px;
+
+    margin:18px auto;
 }
 
-.input-group label {
-  font-size: 13px;
-  color: #cbd5e1;
+/* TEXT */
+.subtitle{
+    color:white;
+
+    font-size:clamp(1rem,4vw,1.5rem);
+
+    font-weight:300;
 }
 
-.input-group input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 5px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: #1e293b;
-  color: white;
+.headline{
+    margin-top:10px;
+
+    color:#66ffab;
+
+    font-size:clamp(1.5rem,5vw,2.2rem);
+
+    font-weight:700;
 }
 
-/* Password */
-.password-wrapper {
-  position: relative;
+/* CREATES EMPTY SCENIC AREA */
+.middle-space{
+    flex:1;
+    min-height:120px;
 }
 
-.toggle-password {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background: none;
-  border: none;
-  color: #22c55e;
-  cursor: pointer;
+/* BUTTON AREA */
+.bottom-section{
+    width:100%;
 }
 
-/* Buttons */
-.auth-primary-btn {
-  width: 100%;
-  padding: 12px;
-  background: #22c55e;
-  color: black;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-top: 10px;
-  cursor: pointer;
+/* PRIMARY BUTTON */
+.btn-primary{
+    width:100%;
+    min-height:68px;
+
+    border:none;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7effbc,
+        #43d989
+    );
+
+    color:#04151d;
+
+    font-size:clamp(1rem,4vw,1.4rem);
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 30px rgba(126,255,188,.25);
 }
 
-.auth-secondary-btn {
-  width: 100%;
-  padding: 12px;
-  background: transparent;
-  border: 1px solid #334155;
-  color: white;
-  border-radius: 10px;
-  margin-top: 10px;
-  cursor: pointer;
+.btn-primary span{
+    margin-right:10px;
 }
 
-/* Footer */
-.auth-footer {
-  margin-top: 15px;
-  font-size: 13px;
+/* SECONDARY BUTTON */
+.btn-secondary{
+    width:100%;
+    min-height:68px;
+
+    margin-top:15px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(126,255,188,.4);
+
+    background:transparent;
+
+    color:white;
+
+    font-size:clamp(.95rem,3vw,1.1rem);
+
+    cursor:pointer;
 }
 
-.auth-footer a {
-  color: #22c55e;
-  text-decoration: none;
-}
+/* SHORT DEVICES */
+@media (max-height:750px){
 
-/* Back button */
-.back-btn {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  background: #1e293b;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
+    .logo-container{
+        width:200px;
+        height:140px;
+    }
+
+    .logo{
+        transform:
+            translateY(-50px)
+            scale(1.45);
+    }
+
+    .brand{
+        font-size:3rem;
+    }
+
+    .headline{
+        font-size:1.5rem;
+    }
+
+    .middle-space{
+        min-height:50px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        min-height:58px;
+    }
 }
